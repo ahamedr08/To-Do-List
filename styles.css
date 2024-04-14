@@ -16,7 +16,6 @@ body {
     max-width: 400px;
     width: 100%;
     text-align: center;
-    animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
@@ -63,7 +62,6 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: slideIn 0.5s ease-in-out;
 }
 
 .delete-btn {
@@ -80,22 +78,31 @@ li {
     background-color: #c0392b;
 }
 
+/* Add fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@keyframes slideIn {
+/* Add smooth transition for editing tasks */
+li span {
+    transition: color 0.3s ease;
+}
+
+/* Add fade-out animation */
+@keyframes fadeOut {
     from {
-        transform: translateY(-20px);
-        opacity: 0;
+        opacity: 1;
+        transform: translateY(0);
     }
     to {
-        transform: translateY(0);
-        opacity: 1;
+        opacity: 0;
+        transform: translateY(-20px);
     }
 }
